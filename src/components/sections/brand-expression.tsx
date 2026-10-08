@@ -101,6 +101,7 @@ export default function BrandExpression() {
               alt="Shakti House Power Bulk training aesthetics" 
               fill
               className="object-cover object-center"
+              style={{ filter: "grayscale(100%)", WebkitFilter: "grayscale(100%)" }}
               sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
