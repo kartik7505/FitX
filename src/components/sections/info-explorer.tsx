@@ -48,7 +48,7 @@ export default function InfoExplorer() {
     <section id="details" className="relative py-24 min-h-screen bg-canvas flex flex-col justify-center overflow-hidden">
       
       {/* Background Video Layer */}
-      <div className="absolute inset-0 z-0 opacity-20 pointer-events-none md:mix-blend-screen">
+      <div className="absolute inset-0 z-0 opacity-40 md:opacity-20 pointer-events-none md:mix-blend-screen">
         <video 
           src="/video-3.mp4" 
           autoPlay 

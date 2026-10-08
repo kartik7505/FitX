@@ -110,7 +110,7 @@ export default function TrainingEditorial() {
             muted 
             loop 
             playsInline 
-            className="w-full h-full object-cover opacity-30 transform-gpu"
+            className="w-full h-full object-cover opacity-50 md:opacity-30 transform-gpu"
             onError={(e) => {
               (e.target as HTMLVideoElement).style.display = "none";
             }}
