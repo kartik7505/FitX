@@ -10,11 +10,11 @@ export default function ProductDetail() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const annotations = [
-    { title: "Metallic Gold Lid", desc: "Reflective crown finish.", x: 50, y: 32 },
-    { title: "Signature SH Mark", desc: "Gold monogram with a crown.", x: 55, y: 44 },
-    { title: "Power Bulk Label", desc: "Brush-style typography.", x: 45, y: 54 },
-    { title: "60-Tablet Pack", desc: "Dietary supplement quantity.", x: 55, y: 63 },
-    { title: "Glossy Black Bottle", desc: "Premium cylindrical form.", x: 38, y: 44 }
+    { title: "Metallic Gold Lid", desc: "Reflective crown finish.", x: 42, y: 36, align: "right" },
+    { title: "Signature SH Mark", desc: "Gold monogram with a crown.", x: 58, y: 44, align: "left" },
+    { title: "Power Bulk Label", desc: "Brush-style typography.", x: 40, y: 54, align: "right" },
+    { title: "60-Tablet Pack", desc: "Dietary supplement quantity.", x: 58, y: 64, align: "left" },
+    { title: "Glossy Black Bottle", desc: "Premium cylindrical form.", x: 38, y: 72, align: "right" }
   ];
 
   useEffect(() => {
@@ -62,21 +62,30 @@ export default function ProductDetail() {
             {annotations.map((item, i) => (
               <div 
                 key={i}
-                className="annotation-marker absolute flex flex-col items-center opacity-0 scale-90"
+                className={`annotation-marker absolute flex items-center opacity-0 scale-90 ${item.align === 'left' ? 'flex-row' : 'flex-row-reverse'}`}
                 style={{ 
                   left: `${item.x}%`, 
                   top: `${item.y}%`,
-                  transform: 'translate(-50%, -50%)'
+                  transform: item.align === 'left' ? 'translate(0, -50%)' : 'translate(-100%, -50%)'
                 }}
               >
-                {/* Pointer dot */}
-                <div className="w-2 h-2 rounded-full bg-gold shadow-[0_0_10px_rgba(214,173,53,0.5)]"></div>
-                {/* Connector line */}
-                <div className="w-[1px] h-8 bg-gold/50 my-1"></div>
-                {/* Label */}
-                <div className="bg-surface/80 backdrop-blur-sm border border-gold/20 px-4 py-2 rounded-sm text-center">
-                  <h4 className="text-ivory font-inter font-semibold text-sm">{item.title}</h4>
+                {item.align === 'left' && (
+                  <>
+                    <div className="w-2 h-2 rounded-full bg-gold shadow-[0_0_10px_rgba(214,173,53,0.5)] shrink-0"></div>
+                    <div className="w-12 h-[1px] bg-gold/50 mx-2 shrink-0"></div>
+                  </>
+                )}
+                
+                <div className="bg-surface/80 backdrop-blur-sm border border-gold/20 px-4 py-2 rounded-sm text-center w-max">
+                  <h4 className="text-ivory font-inter font-semibold text-sm whitespace-nowrap">{item.title}</h4>
                 </div>
+
+                {item.align === 'right' && (
+                  <>
+                    <div className="w-12 h-[1px] bg-gold/50 mx-2 shrink-0"></div>
+                    <div className="w-2 h-2 rounded-full bg-gold shadow-[0_0_10px_rgba(214,173,53,0.5)] shrink-0"></div>
+                  </>
+                )}
               </div>
             ))}
           </div>
