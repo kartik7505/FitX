@@ -34,9 +34,9 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative h-[200vh] w-full bg-canvas">
+    <section ref={containerRef} className="relative h-[100svh] md:h-[200vh] w-full bg-canvas">
       {/* Pinned Viewport */}
-      <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col md:flex-row items-center justify-center pt-20">
+      <div className="sticky top-0 h-[100svh] md:h-screen w-full overflow-hidden flex flex-col md:flex-row items-center justify-center pt-20">
         
         {/* Background Grain */}
         <div className="absolute inset-0 bg-noise opacity-50 z-0 pointer-events-none mix-blend-overlay"></div>
