@@ -33,10 +33,10 @@ export default function BrandExpression() {
       { clipPath: "inset(100% 0% 0% 0%)" },
       { clipPath: "inset(0% 0% 0% 0%)", duration: 1.5, ease: "power4.inOut" }
     )
-    // Image slight scale down
+    // Image slight scale down and auto-colorize
     .fromTo(imageWrapperRef.current.querySelector("img"),
-      { scale: 1.1 },
-      { scale: 1, duration: 1.5, ease: "power2.out" },
+      { scale: 1.1, filter: "grayscale(100%)" },
+      { scale: 1, filter: "grayscale(0%)", duration: 1.5, ease: "power2.out" },
       "<"
     )
     // Stagger headline lines
@@ -100,7 +100,7 @@ export default function BrandExpression() {
               src="/image-1.png" 
               alt="Shakti House Power Bulk training aesthetics" 
               fill
-              className="object-cover object-center grayscale hover:grayscale-0 transition-all duration-1000"
+              className="object-cover object-center"
               sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
