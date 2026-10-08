@@ -4,6 +4,7 @@ import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import VideoScrollPlayer from "@/components/ui/video-scroll-player";
+import { motion } from "framer-motion";
 
 export default function ProductDetail() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -83,18 +84,31 @@ export default function ProductDetail() {
         </div>
 
         {/* Mobile Detail List */}
-        <div className="absolute bottom-12 left-0 right-0 px-6 md:hidden z-20">
-          <ul className="flex flex-col gap-4 bg-canvas/95 p-6 border border-surface rounded-sm shadow-xl">
+        <div className="absolute bottom-8 left-0 right-0 px-6 md:hidden z-20 pointer-events-none">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="flex flex-col bg-canvas border border-surface rounded-sm shadow-2xl overflow-hidden pointer-events-auto"
+          >
             {annotations.map((item, i) => (
-              <li key={i} className="flex items-start gap-3">
-                <span className="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
+              <motion.div 
+                key={i} 
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.2 + (i * 0.1) }}
+                className={`p-4 flex items-start gap-4 ${i !== annotations.length - 1 ? 'border-b border-surface/50' : ''}`}
+              >
+                <span className="text-[10px] font-barlow font-bold text-gold mt-1.5 shrink-0 tracking-wider">0{i + 1}</span>
                 <div>
-                  <h4 className="text-ivory font-inter font-semibold text-sm">{item.title}</h4>
-                  <p className="text-muted text-xs font-light">{item.desc}</p>
+                  <h4 className="text-ivory font-inter font-semibold text-xs uppercase tracking-wider mb-0.5">{item.title}</h4>
+                  <p className="text-ivory/60 text-xs font-light leading-snug">{item.desc}</p>
                 </div>
-              </li>
+              </motion.div>
             ))}
-          </ul>
+          </motion.div>
         </div>
         
       </div>
