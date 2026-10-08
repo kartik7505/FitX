@@ -57,16 +57,16 @@ export default function HeroSection() {
             />
             
             {/* Top and Bottom fade to blend with canvas */}
-            <div className="absolute inset-0 bg-gradient-to-b from-canvas via-transparent to-canvas pointer-events-none"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-canvas/80 via-transparent to-canvas/80 pointer-events-none"></div>
             
             {/* Right side fade */}
-            <div className="absolute top-0 bottom-0 right-0 w-1/4 bg-gradient-to-l from-canvas to-transparent pointer-events-none"></div>
+            <div className="absolute top-0 bottom-0 right-0 w-1/4 bg-gradient-to-l from-canvas/80 to-transparent pointer-events-none"></div>
 
             {/* Subtle color grading overlay */}
-            <div className="absolute inset-0 bg-gold/5 mix-blend-overlay pointer-events-none"></div>
+            <div className="absolute inset-0 bg-gold/10 mix-blend-overlay pointer-events-none"></div>
             
             {/* Essential shadow gradient for text readability on the left */}
-            <div className="absolute inset-0 bg-gradient-to-r from-canvas via-canvas/90 to-transparent pointer-events-none w-full md:w-2/3"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-canvas via-canvas/40 to-transparent pointer-events-none w-full md:w-2/3"></div>
           </div>
         </div>
 
