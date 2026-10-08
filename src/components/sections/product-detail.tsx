@@ -90,7 +90,7 @@ export default function ProductDetail() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="flex flex-col bg-canvas border border-surface rounded-sm shadow-2xl overflow-hidden pointer-events-auto"
+            className="flex flex-col bg-canvas/40 backdrop-blur-md border border-white/10 rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.5)] overflow-hidden pointer-events-auto"
           >
             {annotations.map((item, i) => (
               <motion.div 
@@ -99,12 +99,12 @@ export default function ProductDetail() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.2 + (i * 0.1) }}
-                className={`p-4 flex items-start gap-4 ${i !== annotations.length - 1 ? 'border-b border-surface/50' : ''}`}
+                className={`p-4 flex items-start gap-4 ${i !== annotations.length - 1 ? 'border-b border-white/10' : ''} hover:bg-white/5 transition-colors`}
               >
                 <span className="text-[10px] font-barlow font-bold text-gold mt-1.5 shrink-0 tracking-wider">0{i + 1}</span>
                 <div>
                   <h4 className="text-ivory font-inter font-semibold text-xs uppercase tracking-wider mb-0.5">{item.title}</h4>
-                  <p className="text-ivory/60 text-xs font-light leading-snug">{item.desc}</p>
+                  <p className="text-ivory/70 text-xs font-light leading-snug">{item.desc}</p>
                 </div>
               </motion.div>
             ))}
