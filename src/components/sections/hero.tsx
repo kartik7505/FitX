@@ -43,22 +43,30 @@ export default function HeroSection() {
 
         {/* Video / 3D Element Layer */}
         <div ref={videoWrapperRef} className="absolute inset-0 z-0 flex justify-end opacity-60 md:opacity-100 pointer-events-none">
-          <div 
-            className="w-full h-full md:w-[75%] relative origin-center"
-            style={{
-              WebkitMaskImage: "radial-gradient(ellipse 85% 100% at 65% 50%, black 40%, transparent 100%)",
-              maskImage: "radial-gradient(ellipse 85% 100% at 65% 50%, black 40%, transparent 100%)",
-            }}
-          >
-            <VideoScrollPlayer 
+          <div className="w-full h-full md:w-[75%] relative origin-center bg-canvas">
+            <video 
               src="/video-1.mp4" 
-              containerRef={containerRef}
-              className="w-full h-full object-cover"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover transform-gpu"
+              onError={(e) => {
+                (e.target as HTMLVideoElement).style.display = "none";
+              }}
             />
-            {/* Subtle color grading overlay to integrate video with site palette */}
+            
+            {/* Top and Bottom fade to blend with canvas */}
+            <div className="absolute inset-0 bg-gradient-to-b from-canvas via-transparent to-canvas pointer-events-none"></div>
+            
+            {/* Right side fade */}
+            <div className="absolute top-0 bottom-0 right-0 w-1/4 bg-gradient-to-l from-canvas to-transparent pointer-events-none"></div>
+
+            {/* Subtle color grading overlay */}
             <div className="absolute inset-0 bg-gold/5 mix-blend-overlay pointer-events-none"></div>
-            {/* Additional shadow gradient to ensure text readability on the left */}
-            <div className="absolute inset-0 bg-gradient-to-r from-canvas via-canvas/70 to-transparent pointer-events-none w-full md:w-1/2"></div>
+            
+            {/* Essential shadow gradient for text readability on the left */}
+            <div className="absolute inset-0 bg-gradient-to-r from-canvas via-canvas/90 to-transparent pointer-events-none w-full md:w-2/3"></div>
           </div>
         </div>
 
