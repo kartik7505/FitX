@@ -69,7 +69,7 @@ export default function TrainingEditorial() {
             containerRef={containerRef}
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-canvas/30 mix-blend-multiply"></div>
+          <div className="absolute inset-0 bg-canvas/30 md:mix-blend-multiply"></div>
         </div>
 
         {/* Scrolling text track */}
@@ -110,7 +110,7 @@ export default function TrainingEditorial() {
             muted 
             loop 
             playsInline 
-            className="w-full h-full object-cover opacity-30 grayscale"
+            className="w-full h-full object-cover opacity-30 transform-gpu"
             onError={(e) => {
               (e.target as HTMLVideoElement).style.display = "none";
             }}

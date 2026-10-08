@@ -97,11 +97,11 @@ export default function VisualStudy() {
           </div>
           
           {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-canvas/80 via-transparent to-canvas/20 mix-blend-multiply pointer-events-none"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-canvas/80 via-transparent to-canvas/20 md:mix-blend-multiply pointer-events-none"></div>
 
           {/* Info Cards over negative space */}
           <div className="absolute bottom-8 left-8 md:bottom-12 md:left-12 max-w-xs pointer-events-none">
-            <div className="bg-canvas/40 backdrop-blur-md border border-surface/50 p-6 rounded-sm">
+            <div className="bg-canvas/80 md:bg-canvas/40 md:backdrop-blur-md border border-surface/50 p-6 rounded-sm">
               <span className="text-gold font-barlow font-bold tracking-widest text-sm uppercase mb-2 block">
                 Texture
               </span>

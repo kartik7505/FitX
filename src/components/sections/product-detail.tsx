@@ -84,7 +84,7 @@ export default function ProductDetail() {
 
         {/* Mobile Detail List */}
         <div className="absolute bottom-12 left-0 right-0 px-6 md:hidden z-20">
-          <ul className="flex flex-col gap-4 bg-canvas/80 backdrop-blur-md p-6 border border-surface rounded-sm">
+          <ul className="flex flex-col gap-4 bg-canvas/95 p-6 border border-surface rounded-sm shadow-xl">
             {annotations.map((item, i) => (
               <li key={i} className="flex items-start gap-3">
                 <span className="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>

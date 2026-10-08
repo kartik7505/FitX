@@ -61,7 +61,7 @@ export default function Gallery() {
               (e.target as HTMLVideoElement).style.display = "none";
             }}
           />
-          <div className="absolute inset-0 bg-canvas/20 mix-blend-multiply pointer-events-none"></div>
+          <div className="absolute inset-0 bg-canvas/20 md:mix-blend-multiply pointer-events-none"></div>
         </div>
 
         {/* Tall Image Block */}
@@ -90,7 +90,7 @@ export default function Gallery() {
             src="/image-4.png" 
             alt="Athletic photography" 
             fill
-            className="object-cover grayscale"
+            className="object-cover md:grayscale"
           />
           <div className="absolute inset-0 bg-gold/10 mix-blend-overlay pointer-events-none"></div>
         </div>
@@ -137,7 +137,7 @@ export default function Gallery() {
             src="/image-4.png" 
             alt="Athletic photography" 
             fill
-            className="object-cover grayscale"
+            className="object-cover md:grayscale"
           />
         </div>
 

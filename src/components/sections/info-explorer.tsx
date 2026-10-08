@@ -48,14 +48,14 @@ export default function InfoExplorer() {
     <section id="details" className="relative py-24 min-h-screen bg-canvas flex flex-col justify-center overflow-hidden">
       
       {/* Background Video Layer */}
-      <div className="absolute inset-0 z-0 opacity-20 pointer-events-none mix-blend-screen">
+      <div className="absolute inset-0 z-0 opacity-20 pointer-events-none md:mix-blend-screen">
         <video 
           src="/video-3.mp4" 
           autoPlay 
           muted 
           loop 
           playsInline 
-          className="w-full h-full object-cover grayscale"
+          className="w-full h-full object-cover md:grayscale transform-gpu"
           onError={(e) => {
             (e.target as HTMLVideoElement).style.display = "none";
           }}
@@ -108,7 +108,7 @@ export default function InfoExplorer() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
-                className="w-full max-w-2xl bg-surface/80 backdrop-blur-md border border-surface p-8 md:p-12 rounded-sm relative overflow-hidden"
+                className="w-full max-w-2xl bg-surface/95 md:bg-surface/80 md:backdrop-blur-md border border-surface p-8 md:p-12 rounded-sm relative overflow-hidden"
               >
                 {/* Accent line */}
                 <div className="absolute top-0 left-0 w-1 h-full bg-gold"></div>

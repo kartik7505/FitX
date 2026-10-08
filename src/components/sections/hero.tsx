@@ -39,7 +39,7 @@ export default function HeroSection() {
       <div className="sticky top-0 h-[100svh] md:h-screen w-full overflow-hidden flex flex-col md:flex-row items-center justify-center pt-20">
         
         {/* Background Grain */}
-        <div className="absolute inset-0 bg-noise opacity-50 z-0 pointer-events-none mix-blend-overlay"></div>
+        <div className="absolute inset-0 bg-noise opacity-50 z-0 pointer-events-none md:mix-blend-overlay"></div>
 
         {/* Video / 3D Element Layer */}
         <div ref={videoWrapperRef} className="absolute inset-0 z-0 flex justify-end opacity-60 md:opacity-100 pointer-events-none">
@@ -63,7 +63,7 @@ export default function HeroSection() {
             <div className="absolute top-0 bottom-0 right-0 w-1/4 bg-gradient-to-l from-canvas/80 to-transparent pointer-events-none"></div>
 
             {/* Subtle color grading overlay */}
-            <div className="absolute inset-0 bg-gold/10 mix-blend-overlay pointer-events-none"></div>
+            <div className="absolute inset-0 bg-gold/10 opacity-30 md:opacity-100 md:mix-blend-overlay pointer-events-none"></div>
             
             {/* Essential shadow gradient for text readability on the left */}
             <div className="absolute inset-0 bg-gradient-to-r from-canvas via-canvas/40 to-transparent pointer-events-none w-full md:w-2/3"></div>
