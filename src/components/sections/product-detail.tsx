@@ -10,11 +10,11 @@ export default function ProductDetail() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const annotations = [
-    { title: "Metallic Gold Lid", desc: "Reflective crown finish.", x: 50, y: 15 },
-    { title: "Signature SH Mark", desc: "Gold monogram with a crown.", x: 50, y: 35 },
-    { title: "Power Bulk Label", desc: "Brush-style typography.", x: 50, y: 55 },
-    { title: "60-Tablet Pack", desc: "Dietary supplement quantity.", x: 50, y: 75 },
-    { title: "Glossy Black Bottle", desc: "Premium cylindrical form.", x: 20, y: 60 }
+    { title: "Metallic Gold Lid", desc: "Reflective crown finish.", x: 50, y: 32 },
+    { title: "Signature SH Mark", desc: "Gold monogram with a crown.", x: 55, y: 44 },
+    { title: "Power Bulk Label", desc: "Brush-style typography.", x: 45, y: 54 },
+    { title: "60-Tablet Pack", desc: "Dietary supplement quantity.", x: 55, y: 63 },
+    { title: "Glossy Black Bottle", desc: "Premium cylindrical form.", x: 38, y: 44 }
   ];
 
   useEffect(() => {
